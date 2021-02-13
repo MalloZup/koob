@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Koob: save bookmarks with tags, the minimalist way</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    	div {
+            padding: 10px;
+            background-color: #f6f6f6;
+            overflow: hidden;
+        }
+    	input[type=text], textarea, select {
+            font: 17px Calibri;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type=button]{ 
+            font: 17px Calibri;
+            width: auto;
+            float: right;
+            cursor: pointer;
+            padding: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <input type="text" id="linkName" placeholder="Enter full path of link" />
+        </div>
+        <div>
+            <input type="text" id="linkTag" placeholder="Enter tag" />
+        </div>
+        <div>
+            <input type="button" id="bt" value="Save data to file" onclick="saveData()" />
+        </div>
+
+    </div>
+</body>
+<script>
+    let saveData = () => {
+        // Get the data from each element on the form.
+    	const name = document.getElementById('linkName');
+        const tag = document.getElementById('linkTag');
+	// not satisfied by this name, maybe improve later
+	link = { "name": name.value, "tag": tag.value };
+        console.log(link);
+    }
+</script>
+</html>
