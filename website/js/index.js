@@ -6,4 +6,8 @@ function sendDataToBackend(){
    // not satisfied by this name, maybe improve later
    linkInfos = { "name": name.value, "tag": tag.value };
    console.log(linkInfos);
+   var xhr = new XMLHttpRequest();
+   xhr.open("POST", "/bookmarks", true);
+   xhr.setRequestHeader('Content-Type', 'application/json');
+   xhr.send(JSON.stringify({linkInfos}));
 }

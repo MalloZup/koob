@@ -2,6 +2,9 @@
 
 Koob (book in reverse mode), is a simple javascript page which is intended to be:
 
+(Structure of the project: https://golang.org/doc/articles/wiki/ )
+
+
 - minimalistic
 - learning journey/hack project within javascript
 
