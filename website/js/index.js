@@ -1,13 +1,20 @@
 function sendDataToBackend(){
    // Get the data from each element on the form.
    // It is a bit hardcoded  
-   const name = document.getElementById('linkName');
-   const tag = document.getElementById('linkTag');
+   const Name = document.getElementById('linkName');
+   const Tag = document.getElementById('linkTag');
    // not satisfied by this name, maybe improve later
-   linkInfos = { "name": name.value, "tag": tag.value };
+   let linkInfos = { "Name": Name.value, "Tag": Tag.value };
    console.log(linkInfos);
-   var xhr = new XMLHttpRequest();
-   xhr.open("POST", "/bookmarks", true);
-   xhr.setRequestHeader('Content-Type', 'application/json');
-   xhr.send(JSON.stringify({linkInfos}));
+   console.log("LOGGED");
+   fetch("/bookmarks", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify(linkInfos),
+    }).then((resp) => {
+      console.log(resp);
+    });
 }
